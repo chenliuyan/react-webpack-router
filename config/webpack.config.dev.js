@@ -40,7 +40,7 @@ export default {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/           
             },
             {
                 test: /\.css$/,
@@ -64,6 +64,32 @@ export default {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/[name].ext'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff2?|svg)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: 'font/[name].[ext]'
+                }
+            },
+            {
+                test:/\.(ttf|eot)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'fonts/[name].[ext]'
+                }
             }
         ]
     }
