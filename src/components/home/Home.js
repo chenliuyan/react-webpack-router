@@ -1,14 +1,17 @@
 import React from 'react';
+import Header from './Header';
 
-class Home extends React.component {
+class Home extends React.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
-        renturn(
+        return(
             <div>
-                <h1>This is home page.</h1>
+                <Header />
             </div>
         );
     }
 }
+ export default Home;
